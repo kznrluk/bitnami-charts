@@ -53,6 +53,8 @@ Return the proper Mastodon web domain
 {{- define "mastodon.web.domain" -}}
     {{- if .Values.webDomain -}}
         {{- print .Values.webDomain -}}
+    {{- else if .Values.localDomain -}}
+        {{- print .Values.localDomain -}}
     {{- else if .Values.apache.enabled -}}
         {{- if .Values.apache.ingress.enabled -}}
         {{- print .Values.apache.ingress.hostname -}}
